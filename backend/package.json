@@ -5,10 +5,10 @@
   "license": "ISC",
   "author": "kia-ghasemi",
   "type": "module",
-  "main": "dist/server.js",
+  "main": "dist/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx watch src/server.ts",
+    "dev": "tsx watch src/app.ts",
     "build": "tsc",
     "start": "node dist/server.js",
     "typecheck": "tsc --noEmit"
