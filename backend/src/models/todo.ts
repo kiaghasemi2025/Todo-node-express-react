@@ -1,16 +1,11 @@
 import { Schema, model } from 'mongoose'
+import type { InferSchemaType } from 'mongoose'
 
-interface Todo {
-    text: string;
-    description: string;
-    status: boolean
-}
-
-const todoSchema = new Schema<Todo>({
+const todoSchema = new Schema({
     text: { type: String, required: true },
     description: { type: String, required: true },
-    status: { type: Boolean, required: true }
-})
+    status: { type: Boolean, required: true, default: false }
+}, { timestamps: true })
 
-
-export default model<Todo>("Todo", todoSchema)
+export type Todo = InferSchemaType<typeof todoSchema>
+export default model<Todo>("Todos", todoSchema)
