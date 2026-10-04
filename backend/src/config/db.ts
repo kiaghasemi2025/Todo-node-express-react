@@ -1,8 +1,7 @@
 import mongoose from 'mongoose'
+import { env } from './env.js';
 
 export async function connectDB(): Promise<void> {
-    const uri = process.env.URI;
-    if (!uri) { throw new Error("uri is undifind") }
-    await mongoose.connect(uri)
+    await mongoose.connect(env.URI)
     console.log('Mongo DB Connected');
 }
