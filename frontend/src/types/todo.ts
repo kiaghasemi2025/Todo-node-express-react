@@ -7,6 +7,8 @@ export interface Todo {
     updatedAt: string
 }
 
+export type NewTodo = Pick<Todo, 'text' | 'description'>;
+
 export interface TodosResponse {
     todos: Todo[]
 }

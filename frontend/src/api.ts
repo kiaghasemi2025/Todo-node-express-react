@@ -1,11 +1,10 @@
 import axios from 'axios';
-import type { Todo, TodoResponse, TodosResponse, MessageResponse } from './types/todo'
+import type { Todo, TodoResponse, TodosResponse, MessageResponse , NewTodo } from './types/todo'
 
 const api = axios.create({
     baseURL: import.meta.env.VITE_API_URL
 })
 
-type NewTodo = Pick<Todo, 'text' | 'description'>;
 type TodoUpdate = Partial<Pick<Todo, 'text' | 'description' | 'status'>>;
 
 export const getTodos = async () => {
