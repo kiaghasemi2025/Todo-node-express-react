@@ -8,7 +8,8 @@ const api = axios.create({
 type TodoUpdate = Partial<Pick<Todo, 'text' | 'description' | 'status'>>;
 
 export const getTodos = async () => {
-    const { data } = await api.get<TodosResponse>('/todos')
+    const { data } = await api.get<TodosResponse>('/todos');
+    console.log("raw response:", data);
     return data.todos
 }
 

@@ -7,15 +7,16 @@ interface Props {
 }
 
 export default function TodoItem({todo,onToggle,onDelete}:Props) {
+    const checkTodo:string = todo.status == true? 'line-through' : '';
     return(
-        <div>
-            <div>
-                <h1>{todo.text}</h1>
-                <span>{todo.description}</span>
+        <div className="Card">
+            <div className="Card--text">
+                <h1 className={checkTodo}>{todo.text}</h1>
+                <span className={checkTodo}>{todo.description}</span>
             </div>
-            <div>
-                <button onClick={() => onToggle(todo)}>Complete</button>
-                <button onClick={() => onDelete(todo._id)}>Delete</button>
+            <div className="Card--button">
+                <button className={todo.status ? 'hide-button' : 'Card--button__done'} onClick={() => onToggle(todo)}>Complete</button>
+                <button className="Card--button__delete" onClick={() => onDelete(todo._id)}>Delete</button>
             </div>
         </div>
     )

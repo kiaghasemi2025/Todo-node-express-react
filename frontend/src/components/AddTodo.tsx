@@ -18,7 +18,7 @@ export default function AddTodo({ onAdd }: Props) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className='Form' onSubmit={handleSubmit}>
             <div>
                 <div>
                     <label htmlFor="name">Name:</label>
